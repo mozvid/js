@@ -7,8 +7,7 @@ let domain	= window.location.hostname,
 
 if (!ua.match(regex)) {
 	var afflink = "https://s.click.aliexpress.com/deep_link.htm?dl_target_url=https%3A%2F%2Fwww.aliexpress.com%2Fitem%2F-%2F"+productId+".html&aff_short_key=bwU7vsvE&dp="+domain;
-	//window.location.replace(afflink);
-	alert(afflink);
+	window.location.replace(afflink);
 }
 
 s.type = 'text/javascript';
