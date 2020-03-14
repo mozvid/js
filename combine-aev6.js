@@ -1,14 +1,14 @@
-let url 	  = window.location.href,
-	content   = document.getElementById("desc"),
-	ua 		  = navigator.userAgent,
-	s 		  = document.createElement('script'),
-	regex 	  = '/google|bot|bing|yahoo|pinterest|yandex|facebook|webmaster|spider|crawlr/i',
-	productId = document.getElementById("productId").value;
+let url			= window.location.href,
+		content = document.getElementById("desc"),
+		ua 		  = navigator.userAgent,
+		s 		  = document.createElement('script'),
+		regex 	  = '/google|bot|bing|yahoo|pinterest|yandex|facebook|webmaster|spider|crawlr/i',
+		productId = document.getElementById("productId").value;
 
 if (ua.match(regex)) {
-  alert(window.location.hostname);
+  alert('iki bot');
 } else {
-  alert(window.location.hostname);
+  alert('iki udu bot');
 }
 
 s.type = 'text/javascript';
