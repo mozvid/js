@@ -6,6 +6,8 @@ var ua =  navigator.userAgent;
 var regex = '/google|bot|bing|yahoo|pinterest|yandex|facebook|webmaster|spider|crawlr/i';
 if (ua.match(regex)) {
   alert(window.location.hostname);
+} else {
+  alert(window.location.hostname);
 }
 function getParameterByName(name, url) {
 	if (!url) url = window.location.href;
