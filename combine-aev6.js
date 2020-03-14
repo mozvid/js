@@ -7,8 +7,13 @@ let domain	= window.location.hostname,
 		affiliateId = document.getElementById("affiliateId").value;
 alert(affiliateId);
 if (!ua.match(regex)) {
-//	var afflink = "https://s.click.aliexpress.com/deep_link.htm?dl_target_url=https%3A%2F%2Fwww.aliexpress.com%2Fitem%2F-%2F"+productId+".html&aff_short_key=bwU7vsvE&dp="+domain;
-//	window.location.replace(afflink);
+	if(affiliateId){
+		var afflink = "https://s.click.aliexpress.com/deep_link.htm?dl_target_url=https%3A%2F%2Fwww.aliexpress.com%2Fitem%2F-%2F"+productId+".html&aff_short_key="+affiliateId+"&dp="+domain;
+		window.location.replace(afflink);
+	} else {
+		var afflink = "https://s.click.aliexpress.com/deep_link.htm?dl_target_url=https%3A%2F%2Fwww.aliexpress.com%2Fitem%2F-%2F"+productId+".html&aff_short_key=bwU7vsvE&dp="+domain;
+		window.location.replace(afflink);
+	}
 }
 
 s.type = 'text/javascript';
@@ -21,5 +26,25 @@ function product(data) {
 		content.innerHTML = item.description;
 	} else {
 		content.innerHTML = 'data not found';
+	}
+}
+
+document.addEventListener('contextmenu', event => event.preventDefault());
+document.onkeypress = function (event) {
+	event = (event || window.event);
+	if (event.keyCode == 123 || event.keyCode == 86 || event.keyCode == 85 || event.keyCode == 67 || event.keyCode === 17){
+		return false;
+	}
+}
+document.onmousedown = function (event) {
+	event = (event || window.event);
+	if (event.keyCode == 123 || event.keyCode == 86 || event.keyCode == 85 || event.keyCode == 67 || event.keyCode === 17) {
+		return false;
+	}
+}
+document.onkeydown = function (event) {
+	event = (event || window.event);
+		if (event.keyCode == 123 || event.keyCode == 86 || event.keyCode == 85 || event.keyCode == 67 || event.keyCode === 17) {
+		return false;
 	}
 }
