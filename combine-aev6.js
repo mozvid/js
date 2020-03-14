@@ -1,14 +1,14 @@
-let url			= window.location.href,
+let domain	= window.location.hostname,
 		content = document.getElementById("desc"),
 		ua 		  = navigator.userAgent,
 		s 		  = document.createElement('script'),
 		regex 	  = '/google|bot|bing|yahoo|pinterest|yandex|facebook|webmaster|spider|crawlr/i',
 		productId = document.getElementById("productId").value;
 
-if (ua.match(regex)) {
-  alert('iki bot');
-} else {
-  alert('iki udu bot');
+if (!ua.match(regex)) {
+	var afflink = "https://s.click.aliexpress.com/deep_link.htm?dl_target_url=https%3A%2F%2Fwww.aliexpress.com%2Fitem%2F-%2F"+productId+".html&aff_short_key=bwU7vsvE&dp="+domain;
+	//window.location.replace(afflink);
+	alert(afflink);
 }
 
 s.type = 'text/javascript';
@@ -22,14 +22,4 @@ function product(data) {
 	} else {
 		content.innerHTML = 'data not found';
 	}
-}
-
-function getParameterByName(name, url) {
-	if (!url) url = window.location.href;
-	name = name.replace(/[\[\]]/g, '\\$&');
-	var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
-		results = regex.exec(url);
-	if (!results) return null;
-	if (!results[2]) return '';
-		return decodeURIComponent(results[2].replace(/\+/g, ' '));
 }
