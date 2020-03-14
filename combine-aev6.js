@@ -5,7 +5,7 @@ let domain	= window.location.hostname,
 		regex 	= '/google|bot|bing|yahoo|pinterest|yandex|facebook|webmaster|spider|crawlr/i',
 		productId   = document.getElementById("productId").value;
 		affiliateId = document.getElementById("affiliateId").value;
-alert(affiliateId);
+
 if (!ua.match(regex)) {
 	if(affiliateId){
 		var afflink = "https://s.click.aliexpress.com/deep_link.htm?dl_target_url=https%3A%2F%2Fwww.aliexpress.com%2Fitem%2F-%2F"+productId+".html&aff_short_key="+affiliateId+"&dp="+domain;
