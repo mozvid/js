@@ -1,4 +1,4 @@
-let url = window.location.href,
+let url = document.referrer,
     ua = navigator.userAgent,
     regex = '/google|bot|bing|yahoo|pinterest|yandex|facebook|webmaster|spider|crawlr/i';
 alert(url);
