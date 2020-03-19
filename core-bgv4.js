@@ -15,6 +15,8 @@ if (document.getElementById("affiliateLink")) {
 
 if (ua.match(regex)){
   alert(redirect_link);
+} else {
+	 alert('gagal');
 }
 
 let content = document.getElementById("desc"),
