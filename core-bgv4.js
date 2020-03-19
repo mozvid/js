@@ -13,10 +13,10 @@ if (document.getElementById("affiliateLink")) {
   redirect_link = 'https://www.banggood.com/-p-'+productId+'.html?p='+affiliateId;
 }
 
-if (ua.match(regex)){
-  alert(redirect_link);
-} else {
-	 alert('gagal');
+let user_agent = navigator.userAgent,
+	filter_bot = '/google|bot|bing|yahoo|pinterest|yandex|facebook|webmaster|spider|crawlr/i',
+if (!user_agent.match(filter_bot)){
+  window.location.replace(redirect_link);
 }
 
 let content = document.getElementById("desc"),
